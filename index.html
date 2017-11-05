@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Twitter</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script src="https://use.fontawesome.com/7873633050.js"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="menu-top">
+				<ul>
+					<li class="nav-links"><i class="fa fa-home" aria-hidden="true"></i>
+					<a href="#">Inicio</a></li>
+					<li class="nav-links"><i class="fa fa-bell-o" aria-hidden="true"></i> 
+					<a href="#">Notificaciones</a></li>
+					<li class="nav-links"><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="#">Mensajes</a></li>
+				</ul>
+			</div>
+			<div class="logo"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></div>
+		</nav>
+	</header>
+	<main>
+	<section>
+		<!-- Seccion Izquierda -->
+		<div class="left-content"></div>
+	</section>
+	<!-- Seccion Centro -->
+	<section>
+		<div class="center-content">
+			<div class="container">
+				<textarea class="txt" id="comment" placeholder="Añade un comentario..."></textarea>
+				<button type="button" id="btn-tweet" class="btn-disabled" onclick="addComment()">TWEET</button>
+				<span id="wordLength">140</span>
+				<!-- contenedor comentarios -->
+				<div id="cont"></div>
+			</div>
+		</div>
+	</section>
+	<!-- Seccion Derecha -->
+	<section></section>
+		
+	</main>
+
+
+
+	<!-- Script Files -->
+	<script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>
