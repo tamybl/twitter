@@ -47,6 +47,7 @@ nav {
 }
 
 main {
+	width: 100%;
 	position: absolute;
 	top: 46px;	
 	text-align: center;
