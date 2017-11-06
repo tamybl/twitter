@@ -32,7 +32,17 @@ function counter () {
 		document.getElementById('btn-tweet').classList.add('btn-disabled');
 	}	
 }
-       
+
+// Funcion para redimensionar el textarea
+var textarea = document.querySelector('textarea');
+textarea.addEventListener('keydown', function autosize () {
+	var element = this;
+	setTimeout(function(){
+	    element.style.cssText = 'height:auto; padding:3px';
+	    element.style.cssText = 'height:' + element.scrollHeight + 'px';
+  	},0);
+});          
+
 
 function addComment() {
 	reset ();
@@ -69,5 +79,5 @@ function reset () {
 	// Color de numeros de caracteres restantes vuelve 
 	document.getElementById('wordLength').setAttribute('class', 'black');
 	// Textarea vuelve a su tamaño inicial
-	//document.getElementById('comment').style.height = null;
+	document.getElementById('comment').style.height = null;
 }
