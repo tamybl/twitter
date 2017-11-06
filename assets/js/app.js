@@ -15,7 +15,7 @@ function counter () {
 	document.getElementById('wordLength').innerHTML = maxLength;
 	if (count >= 1) { // Si hay al menos un caracter el boton se habilita
 		document.getElementById("btn-tweet").disabled = false;
-		document.getElementById('btn-tweet').classList.remove('btn-disabled');
+		document.getElementById('btn-tweet').setAttribute('class', 'btn-enabled');
 		// Para los colores 
 		if (count >= 1 && count < 120) {
 			document.getElementById('wordLength').setAttribute('class', 'black');
@@ -29,7 +29,7 @@ function counter () {
 	}
 	if (count == 0 || /^\s+$/.test(document.getElementById('comment').value) || count > 140){ // Sino no hay caracteres o puros espacios 
 		document.getElementById("btn-tweet").disabled = true;
-		document.getElementById('btn-tweet').classList.add('btn-disabled');
+		document.getElementById('btn-tweet').setAttribute('class', 'btn-disabled');
 	}	
 }
 
@@ -57,6 +57,12 @@ function addComment() {
 		alert('Ingresa un comentario valido');
 		return false;
 	}
+	// Crear p fecha
+	var valueDate = document.createTextNode(myDate());
+	var newDate = document.createElement('p');
+	newDate.setAttribute('id', 'date');
+	newDate.appendChild(valueDate);
+
 
 	// Nodos de texto del Textarea
 	var textNewComment = document.createTextNode(comments);
@@ -64,6 +70,7 @@ function addComment() {
 	var contenedorElemento = document.createElement('p');
 	contenedorElemento.appendChild(textNewComment);
 	newComments.appendChild(contenedorElemento);
+	newComments.appendChild(newDate);
 	cont.appendChild(newComments);
 }
 
@@ -75,9 +82,20 @@ function reset () {
 	// Boton se vuelve a deshabilitar
 	document.getElementById("btn-tweet").disabled = true; 
 	// Se arrega etiqueta btn-disabled
-	document.getElementById('btn-tweet').classList.add('btn-disabled');
+	document.getElementById('btn-tweet').setAttribute('class', 'btn-disabled');
 	// Color de numeros de caracteres restantes vuelve 
 	document.getElementById('wordLength').setAttribute('class', 'black');
 	// Textarea vuelve a su tamaño inicial
 	document.getElementById('comment').style.height = null;
+}
+
+// Funcion Hora Twitt HH:MM
+function myDate () {
+	// Dividir Date() en un arreglo
+	var arr = Date().split(" ");
+	// elemento 4 del arreglo almacena HH:MM:SS. Se divide en un arreglo de 3
+	var arrTime = arr[4].split(":");
+	// Se toman los datos 0 (HH) y 1 (MM) y se concatenan
+	var time = arrTime[0] + ":" + arrTime[1];
+	return time;
 }

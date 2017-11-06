@@ -7,9 +7,10 @@
 body {
 	margin: 0;
 	position: relative;
-	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: "Segoe UI", Arial,sans-serif;
 	font-size: 14px;
-	background-image: url(../img/bg.jpg);
+	color: #14171a;
+	background-color: #e6ecf0;
 }
 
 nav {
@@ -17,7 +18,7 @@ nav {
 	height: 46px;
 	position: fixed;
 	background-color: #fff;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #898577;
 	z-index: 10;
 }
 
@@ -29,7 +30,7 @@ nav {
 	width: 33%;
 }
 
-.nav-links, .nav-links a {
+.nav-links, .nav-links a, a {
 	margin-right: 10px;
 	color: #26464a;
 	text-decoration: none;
@@ -52,41 +53,59 @@ main {
 	vertical-align: top;
 }
 
+/* Cabecera Perfil Twitter */
+.header-profile {
+	width: 100%;
+	height: 320px;
+	overflow: hidden;
+}
+
+.header-profile img {
+	width: 100%;
+}
+
 section {
 	display: inline-block;
 	padding: 20px;
 	vertical-align: top;
 }
 
-.left-content {
-	width: 280px;
+.left-content, .right-content {
+	width: 250px;
 	height: 300px;
-	border: 1px solid #ccc;
+	padding: 5px 10px 5px 10px;
+	background-color: #fff;
+	text-align: left;
+	vertical-align: top;
+
 }
 /* Contenido Centro */
 
 .center-content {
 	width: 588px;
 	height: auto;
-	border: 1px solid #ccc;
 	vertical-align: top;
 }
 
 .container {
 	width: 100%;
-	padding: 5px;
-	background-color: rgba(255, 255, 255, 0.5);
+	padding: 10px;
+	background-color: #fff;
+	overflow: hidden;
 }
 
 #cont div {
 	padding: 10px;
-	margin: 5px;
-	border: 1px solid #ccc;
+	border-top: 1px solid #e6ecf0;
+	background-color: #fff;
 
 }
 
 #cont div p {
 	word-wrap: break-word; /* word-wrap corta las palabras largas */
+	color: #14171a;
+	text-align: left;
+	
 }
 
  /* Caja de texto */
@@ -103,29 +122,50 @@ section {
 }
 
 .btn-disabled {
+	padding: 6px 16px;
+	background-color: #bbc4c6;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 20px;
 	cursor: not-allowed;
+	float: left;
+
 }
 
-#btn {
-	float: left;
-	margin: 10px;
-	display: inline-block;
+#btn-tweet {
+	padding: 6px 16px;
+	margin-left: 10px;
+	
 } 
+
+.btn-enabled {
+	background-color: #516a6e;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 20px;
+	float: left;
+} 
+
 
 #wordLength {
 	float: right;
 	display: inline-block;
 }
 
+#date {
+	font-size: 0.7em;
+	color: #6e8184;
+}
+
 /* Clases Numero de Caracteres */
 .black {
-	color: black;
+	color: initial;
 }
 
 .yellow {
-	color: yellow;
+	color: #d26100;
 }
 
 .red {
-	color: red;
+	color: #930000;
 }
