@@ -52,6 +52,7 @@ function addComment() {
 	var cont = document.getElementById('cont');
 	// Crear div contenedor
 	var newComments = document.createElement('div');
+	//newComments.setAttribute('id','twits');
 	// Validar que textarea tiene mensaje
 	if (comments.length == 0 || comments == null || /^\s+$/.test(comments)) {
 		alert('Ingresa un comentario valido');
@@ -71,6 +72,9 @@ function addComment() {
 	contenedorElemento.appendChild(textNewComment);
 	newComments.appendChild(contenedorElemento);
 	newComments.appendChild(newDate);
+	// Añadir Tweet en orden del mas reciente
+	//var recentTwit = document.getElementById('twits');
+	//recentTwit.insertBefore(newComments, recentTwit.childNodes[0]);
 	cont.appendChild(newComments);
 }
 
